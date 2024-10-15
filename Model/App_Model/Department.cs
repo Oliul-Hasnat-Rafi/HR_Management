@@ -7,9 +7,8 @@ namespace HR_Management.Model.App_Model
     public class Department
     {
         [Key]
-        public Guid DeptId { get; set; } // Primary Key
-        public Guid ComId { get; set; } // Foreign Key to Company
-        public string? DeptName { get; set; } // Example: HR, IT
+        public Guid DeptId { get; set; } 
+        public Guid ComId { get; set; }         public string? DeptName { get; set; } 
     }
 
 }

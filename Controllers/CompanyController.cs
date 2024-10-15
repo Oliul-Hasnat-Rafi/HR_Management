@@ -18,7 +18,7 @@ namespace Hr_task.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Company
+
         [HttpGet]
         public async Task<ActionResult> GetCompanies()
         {
@@ -36,7 +36,6 @@ namespace Hr_task.Controllers
             }
         }
 
-        // GET: api/Company/5
         [HttpGet("{id}")]
         public async Task<ActionResult> GetCompany(Guid id)
         {
@@ -50,7 +49,7 @@ namespace Hr_task.Controllers
             return Ok(company);
         }
 
-        // POST: api/Company
+    
         [HttpPost]
         public async Task<ActionResult> CreateCompany(CompanyDTO company)
         {
@@ -128,7 +127,7 @@ namespace Hr_task.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Company/5
+ 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCompany(Guid id)
         {

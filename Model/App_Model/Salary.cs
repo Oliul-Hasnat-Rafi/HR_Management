@@ -7,19 +7,19 @@ namespace HR_Management.Model.App_Model
     public class Salary
     {
         [Key]
-        public Guid Id { get; set; } // Primary Key
-        public Guid ComId { get; set; } // Foreign Key to Company
-        public Guid EmpId { get; set; } // Foreign Key to Employee
-        public int Year { get; set; } // Example: 2024
-        public int Month { get; set; } // Example: 9
+        public Guid Id { get; set; } 
+        public Guid ComId { get; set; } 
+        public Guid EmpId { get; set; } 
+        public int Year { get; set; } 
+        public int Month { get; set; } 
         public decimal GrossSalary { get; set; }
         public decimal Basic { get; set; }
         public decimal HRent { get; set; }
         public decimal Medical { get; set; }
-        public decimal AbsentAmount { get; set; } // (Basic / 30) * AbsentDays
+        public decimal AbsentAmount { get; set; } 
         public decimal PayableAmount => GrossSalary - AbsentAmount;
-        public bool IsPaid { get; set; } // True or False
-        public decimal PaidAmount { get; set; } // Total Paid
+        public bool IsPaid { get; set; } 
+        public decimal PaidAmount { get; set; } 
     }
 
 }

@@ -7,9 +7,9 @@ namespace HR_Management.Model.App_Model
     public class Designation
     {
         [Key]
-        public Guid DesigId { get; set; } // Primary Key
-        public Guid ComId { get; set; } // Foreign Key to Company
-        public string ?DesigName { get; set; } // Example: Intern, Manager
+        public Guid DesigId { get; set; } 
+        public Guid ComId { get; set; } 
+        public string ?DesigName { get; set; }
     }
 
 }

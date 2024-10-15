@@ -17,7 +17,7 @@ namespace Hr_task.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Employee/ByCompany?companyid={companyid}
+     
         [HttpGet("ByCompany")]
         public async Task<ActionResult> GetEmployees(Guid companyid)
         {
@@ -36,7 +36,6 @@ namespace Hr_task.Controllers
             }
         }
 
-        // GET: api/Employee/ByDepartment?DepId={DepId}
         [HttpGet("ByDepartment")]
         public async Task<ActionResult> GetEmployeesBYDep(Guid DepId)
         {
@@ -59,12 +58,12 @@ namespace Hr_task.Controllers
         {
             try
             {
-                // Validate inputs
+         
                 if (departmentId == Guid.Empty) return BadRequest("Invalid department ID.");
                 if (month < 1 || month > 12) return BadRequest("Invalid month.");
                 if (year < 1900 || year > DateTime.Now.Year) return BadRequest("Invalid year.");
 
-                // Fetch employees for the given department
+        
                 var employees = await _unitOfWork.Employees.GetAllAsync(e => e.DesigId == departmentId);
 
                 if (employees == null || !employees.Any())
@@ -72,7 +71,7 @@ namespace Hr_task.Controllers
                     return NotFound("No employees found for the given department.");
                 }
 
-                // Fetch salaries for employees in the given month and year
+               
                 var salaryList = await _unitOfWork.Salarys.GetAllAsync(s =>
                     employees.Any(e => e.EmpId == s.EmpId) &&
                     s.Month == month &&
@@ -92,7 +91,7 @@ namespace Hr_task.Controllers
         }
 
 
-        // POST: api/Employee
+      
         [HttpPost]
         public async Task<ActionResult> CreateEmployee(EmployeeDTO employeeDTO)
         {
