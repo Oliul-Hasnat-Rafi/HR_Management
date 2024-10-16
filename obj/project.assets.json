@@ -4461,11 +4461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\source\\Hr_task\\Hr_task.csproj",
+      "projectUniqueName": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
       "projectName": "Hr_task",
-      "projectPath": "B:\\source\\Hr_task\\Hr_task.csproj",
+      "projectPath": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
       "packagesPath": "C:\\Users\\Rafi\\.nuget\\packages\\",
-      "outputPath": "B:\\source\\Hr_task\\obj\\",
+      "outputPath": "B:\\source\\Hr_task\\HR_Management\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rafi\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -63,9 +63,9 @@ namespace Hr_task.Controllers
                 var companyDto = new Company
                 {
                     ComName = company.ComName,
-                    BasicPercentage = company.BasicPercentage,
-                    HRentPercentage = company.HRentPercentage,
-                    MedicalPercentage = company.MedicalPercentage,
+                    Basic = company.BasicPercentage,
+                    Hrent = company.HRentPercentage,
+                    Medical = company.MedicalPercentage,
                     IsInactive = company.IsInactive
                 };
                  await _unitOfWork.Companies.CreateAsync(companyDto);
@@ -105,9 +105,9 @@ namespace Hr_task.Controllers
                 }
                 companyinfo.ComId = company.ComId;
                 companyinfo.ComName = company.ComName;
-                companyinfo.BasicPercentage = company.BasicPercentage;
-                companyinfo.MedicalPercentage = company.MedicalPercentage;
-                companyinfo.HRentPercentage = company.HRentPercentage;
+                companyinfo.Basic = company.BasicPercentage;
+                companyinfo.Medical = company.MedicalPercentage;
+                companyinfo.Hrent = company.HRentPercentage;
                 companyinfo.IsInactive = company.IsInactive;
 
                 await _unitOfWork.Companies.UpdateAsync(companyinfo);

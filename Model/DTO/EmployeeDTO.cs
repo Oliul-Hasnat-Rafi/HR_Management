@@ -27,9 +27,9 @@ namespace Hr_task.Model.DTO
 
             
             public Company? Company { get; set; }
-            public decimal BasicSalary => GrossSalary * (Company?.BasicPercentage ?? 0);
-            public decimal HRent => GrossSalary * (Company?.HRentPercentage ?? 0);
-            public decimal Medical => GrossSalary * (Company?.MedicalPercentage ?? 0);
+            //public decimal BasicSalary => GrossSalary * (Company?.BasicPercentage ?? 0);
+            //public decimal HRent => GrossSalary * (Company?.HRentPercentage ?? 0);
+            //public decimal Medical => GrossSalary * (Company?.MedicalPercentage ?? 0);
         }
     }
 }

@@ -7,13 +7,17 @@ namespace HR_Management.Model.App_Model
     public class Attendance
     {
         [Key]
-        public Guid Id { get; set; } // Primary Key
-        public Guid ComId { get; set; } // Foreign Key to Company
-        public Guid EmpId { get; set; } // Foreign Key to Employee
-        public DateTime Date { get; set; } // Example: 01-Sep-2024
-        public string? AttStatus { get; set; } // P (Present), A (Absent), L (Late)
-        public TimeSpan InTime { get; set; } // Example: 09:00
-        public TimeSpan OutTime { get; set; } // Example: 18:00
+        public Guid Id { get; set; }
+        public Guid ComId { get; set; }
+        public Guid EmpId { get; set; }
+        [Required]
+        public DateTime DtDate { get; set; }
+        [Required]
+        public string AttStatus { get; set; }
+        public TimeSpan InTime { get; set; }
+        public TimeSpan OutTime { get; set; }
+        public Company Company { get; set; }
+        public Employee Employee { get; set; }
     }
 
 }

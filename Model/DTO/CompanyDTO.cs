@@ -8,5 +8,6 @@
         public decimal HRentPercentage { get; set; } // Ex: 0.3 for 30%
         public decimal MedicalPercentage { get; set; } // Ex: 0.15 for 15%
         public bool IsInactive { get; set; }
+
     }
 }
