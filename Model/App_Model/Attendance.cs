@@ -14,10 +14,9 @@ namespace HR_Management.Model.App_Model
         public DateTime DtDate { get; set; }
         [Required]
         public string AttStatus { get; set; }
-        public TimeSpan InTime { get; set; }
-        public TimeSpan OutTime { get; set; }
-        public Company Company { get; set; }
-        public Employee Employee { get; set; }
+        public DateTime? InTime { get; set; }
+        public DateTime? OutTime { get; set; }
+       
     }
 
 }

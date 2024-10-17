@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Hr_task.Controllers.AttendanceController",
+    "Method": "PostAttendance",
+    "RelativePath": "api/Attendance",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "atn",
+        "Type": "HR_Management.Model.App_Model.Attendance",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Hr_task.Controllers.CompanyController",
     "Method": "GetCompanies",
     "RelativePath": "api/Company",

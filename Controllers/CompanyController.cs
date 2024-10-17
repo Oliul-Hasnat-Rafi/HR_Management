@@ -39,17 +39,31 @@ namespace Hr_task.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetCompany(Guid id)
         {
+         
             var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == id);
 
+            
             if (company == null)
             {
                 return NotFound();
             }
 
-            return Ok(company);
+           
+            var employees = await _unitOfWork.Employees.GetAllAsync(e => e.ComId == id);
+
+            
+            var result = new
+            {
+                CompanyInfo = company,
+                EmpInfo = employees
+            };
+
+            
+            return Ok(result);
         }
 
-    
+
+
         [HttpPost]
         public async Task<ActionResult> CreateCompany(CompanyDTO company)
         {
