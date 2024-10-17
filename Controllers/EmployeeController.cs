@@ -125,8 +125,12 @@ namespace Hr_task.Controllers
                     EmpCode = employeeDTO.EmpCode,
                     EmpName = employeeDTO.EmpName,
                     ShiftId = employeeDTO.ShiftId,
+                    
                     DeptId = employeeDTO.DeptId,
+                                        DeptName = department.DeptName,
+
                     DesigId = employeeDTO.DesigId,
+
                     Gender = employeeDTO.Gender,
                     Gross = grossSalary,
                     Basic = grossSalary * (company.Basic / 100),

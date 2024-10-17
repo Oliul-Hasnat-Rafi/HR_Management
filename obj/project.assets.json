@@ -4456,27 +4456,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rafi\\.nuget\\packages\\": {}
+    "/Users/gtr/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
+      "projectUniqueName": "/Users/gtr/Project/rafi/dotnet project/Hr management/HRManagement/HR_Management/Hr_task.csproj",
       "projectName": "Hr_task",
-      "projectPath": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
-      "packagesPath": "C:\\Users\\Rafi\\.nuget\\packages\\",
-      "outputPath": "B:\\source\\Hr_task\\HR_Management\\obj\\",
+      "projectPath": "/Users/gtr/Project/rafi/dotnet project/Hr management/HRManagement/HR_Management/Hr_task.csproj",
+      "packagesPath": "/Users/gtr/.nuget/packages/",
+      "outputPath": "/Users/gtr/Project/rafi/dotnet project/Hr management/HRManagement/HR_Management/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Rafi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/gtr/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4534,16 +4531,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file B:\\source\\Hr_task\\HR_Management\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

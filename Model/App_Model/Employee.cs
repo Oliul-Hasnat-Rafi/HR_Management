@@ -15,9 +15,13 @@ namespace HR_Management.Model.App_Model
         [Required]
         public string EmpName { get; set; }
         public Guid ShiftId { get; set; }
+public String ? shiftName {get; set;}
         public Guid DeptId { get; set; }
+        public String ? DeptName {get;set;}
         public Guid DesigId { get; set; }
         [Required]
+        public String ? desigName {get; set;}
+
         public string Gender { get; set; }
         [Required]
         public decimal Gross { get; set; }
