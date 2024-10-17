@@ -109,7 +109,12 @@ namespace Hr_task.Controllers
                     d.DeptId == employeeDTO.DeptId && d.ComId == employeeDTO.ComId);
                 if (department == null)
                     return BadRequest("Invalid department ID for the specified company.");
-
+// Validate shift
+                var shiftValidate = await _unitOfWork.Shifts.GetAsync(d =>
+                    d.ShiftId == employeeDTO.ShiftId && d.ComId == employeeDTO.ComId);
+                if (department == null)
+                    return BadRequest("Invalid department ID for the specified company.");
+                    
                 // Validate designation
                 var designation = await _unitOfWork.Designations.GetAsync(d =>
                     d.DesigId == employeeDTO.DesigId && d.ComId == employeeDTO.ComId);
@@ -129,7 +134,7 @@ namespace Hr_task.Controllers
                     DeptId = employeeDTO.DeptId,
                                         DeptName = department.DeptName,
                                        desigName=designation.DesigName,
-
+shiftName= shiftValidate.ShiftName,
 
                     DesigId = employeeDTO.DesigId,
 

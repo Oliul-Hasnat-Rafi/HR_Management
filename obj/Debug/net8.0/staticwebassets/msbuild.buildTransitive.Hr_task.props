@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\buildMultiTargeting\Hr_task.props" />
+  <Import Project="../buildMultiTargeting/Hr_task.props" />
 </Project>
