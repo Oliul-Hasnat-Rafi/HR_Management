@@ -128,6 +128,8 @@ namespace Hr_task.Controllers
                     
                     DeptId = employeeDTO.DeptId,
                                         DeptName = department.DeptName,
+                                       desigName=designation.DesigName,
+
 
                     DesigId = employeeDTO.DesigId,
 
