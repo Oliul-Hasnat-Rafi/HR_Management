@@ -10,13 +10,14 @@ namespace HR_Management.Model.App_Model
         public Guid Id { get; set; }
         public Guid ComId { get; set; }
         public Guid EmpId { get; set; }
-        [Required]
-        public DateTime DtDate { get; set; }
+      
         [Required]
         public string AttStatus { get; set; }
-        public DateTime? InTime { get; set; }
-        public DateTime? OutTime { get; set; }
-       
+        public DateTime InTime { get; set; }
+        public DateTime OutTime { get; set; }
+        public Company? Company { get; set; }
+        public Employee? Employee { get; set; }
+
     }
 
 }

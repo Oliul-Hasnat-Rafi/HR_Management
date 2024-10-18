@@ -4,6 +4,7 @@ using API_Task.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hr_task.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20241017110303_fs")]
+    partial class fs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,13 +38,16 @@ namespace Hr_task.Migrations
                     b.Property<Guid>("ComId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("DtDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<Guid>("EmpId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("InTime")
+                    b.Property<DateTime?>("InTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("OutTime")
+                    b.Property<DateTime?>("OutTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

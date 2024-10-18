@@ -14,36 +14,25 @@ namespace Hr_task.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-
         [HttpPost]
         public async Task<ActionResult> PostAttendance(Attendance atn)
         {
-        
-            var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == atn.ComId);
-            if (company == null)
-                return BadRequest("Invalid company ID.");
-
-            var employee = await _unitOfWork.Employees.GetAsync(x => x.EmpId == atn.EmpId);
-            if (employee == null)
-                return BadRequest("Invalid employee ID.");
-
-            var attendance = new Attendance
+            if (!ModelState.IsValid)
             {
-                Id = Guid.NewGuid(),
-                ComId = atn.ComId,
-                EmpId = atn.EmpId,
-                DtDate = atn.DtDate,
-                AttStatus = atn.AttStatus,
-                InTime = atn.InTime,
-                OutTime = atn.OutTime,
-                
-            };
+                return BadRequest(ModelState);
+            }
 
-     
-            await _unitOfWork.Attendances.CreateAsync(attendance);
+            var com = await _unitOfWork.Companies.GetAsync(x => x.ComId == atn.ComId);
+            if (com == null) return BadRequest("Invalid company ID");
+
+            var emp = await _unitOfWork.Employees.GetAsync(x => x.EmpId == atn.EmpId);
+            if (emp == null) return BadRequest("Invalid employee ID");
+
+            await _unitOfWork.Attendances.CreateAsync(atn);
             await _unitOfWork.SaveAsync();
 
-            return Ok("Attendance record created successfully.");
+            return Ok(atn);
         }
+
     }
 }

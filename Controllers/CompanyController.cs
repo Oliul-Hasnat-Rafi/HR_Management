@@ -11,7 +11,7 @@ namespace Hr_task.Controllers
     [ApiController]
     public class CompanyController : ControllerBase
     {
-        
+
         private readonly IUnitOfWork _unitOfWork;
         public CompanyController(IUnitOfWork unitOfWork)
         {
@@ -37,21 +37,24 @@ namespace Hr_task.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetCompany(Guid id)
+        public async Task<ActionResult> GetCompany(Guid id, Guid? depid)
         {
-         
+
             var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == id);
 
-            
+
+
+
             if (company == null)
             {
                 return NotFound();
             }
 
-           
+
             var employees = await _unitOfWork.Employees.GetAllAsync(e => e.ComId == id);
 
-            
+
+
             var result = new
             {
                 CompanyInfo = company,

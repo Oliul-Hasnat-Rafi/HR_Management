@@ -17,9 +17,9 @@ namespace Hr_task.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Employee
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
+        public async Task<ActionResult> GetEmployees()
         {
             try
             {
@@ -32,60 +32,94 @@ namespace Hr_task.Controllers
             }
         }
 
-        //        // GET: api/Employee/ByDepartment?DepId={DepId}
-        //        [HttpGet("ByDepartment")]
-        //        public async Task<ActionResult> GetEmployeesBYDep(Guid DepId)
-        //        {
-        //            try
-        //            {
-        //                if (DepId == Guid.Empty) return BadRequest("Invalid department ID.");
 
-        //                var DepEmp = await _unitOfWork.Employees.GetAsync(x => x.DeptId == DepId);
-        //                if (DepEmp == null) return NotFound("No employees found for the given department.");
 
-        //                return Ok(DepEmp);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //            }
-        //        }
-        //        [HttpGet("SalaryList")]
-        //        public async Task<ActionResult> GetSalaryList(Guid departmentId, int? month, int? year)
-        //        {
-        //            try
-        //            {
-        //                // Validate inputs
-        //                if (departmentId == Guid.Empty) return BadRequest("Invalid department ID.");
-        //                if (month < 1 || month > 12) return BadRequest("Invalid month.");
-        //                if (year < 1900 || year > DateTime.Now.Year) return BadRequest("Invalid year.");
+        [HttpGet("GetEmployeeByid")]
+        public async Task<ActionResult> GetEmployeeByid(Guid _Empid)
+        {
+            try
+            {
+                var employees = await _unitOfWork.Employees.GetAllAsync(x=> x.EmpId ==_Empid);
 
-        //                // Fetch employees for the given department
-        //                var employees = await _unitOfWork.Employees.GetAllAsync(e => e.DesigId == departmentId);
+                if (employees == null)
+                {
+                    return NotFound();
+                }
 
-        //                if (employees == null || !employees.Any())
-        //                {
-        //                    return NotFound("No employees found for the given department.");
-        //                }
+                var attend = await _unitOfWork.Attendances.GetAllAsync(x => x.EmpId == _Empid);
 
-        //                // Fetch salaries for employees in the given month and year
-        //                var salaryList = await _unitOfWork.Salarys.GetAllAsync(s =>
-        //                    employees.Any(e => e.EmpId == s.EmpId) &&
-        //                    s.Month == month &&
-        //                    s.Year == year);
 
-        //                if (salaryList == null || !salaryList.Any())
-        //                {
-        //                    return NotFound("No salaries found for the given filters.");
-        //                }
+                var res = new
+                {
+                    employeesinfo = employees,
+                    attendinfo = attend
+                };
 
-        //                return Ok(salaryList);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-        //            }
-        //        }
+                return Ok(res);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+
+        [HttpGet("ByDepartment")]
+        public async Task<ActionResult> GetEmployeesBYDep(Guid DepId)
+        {
+            try
+            {
+                if (DepId == Guid.Empty) return BadRequest("Invalid department ID.");
+
+                var DepEmp = await _unitOfWork.Employees.GetAsync(x => x.DeptId == DepId);
+                if (DepEmp == null) return NotFound("No employees found for the given department.");
+
+                return Ok(DepEmp);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+        [HttpGet("SalaryList")]
+        public async Task<ActionResult> GetSalaryList(Guid departmentId, int? month, int? year)
+        {
+            try
+            {
+                
+                if (departmentId == Guid.Empty) return BadRequest("Invalid department ID.");
+                if (month < 1 || month > 12) return BadRequest("Invalid month.");
+                if (year < 1900 || year > DateTime.Now.Year) return BadRequest("Invalid year.");
+
+                var employees = await _unitOfWork.Employees.GetAllAsync(e => e.DesigId == departmentId);
+
+                if (employees == null || !employees.Any())
+                {
+                    return NotFound("No employees found for the given department.");
+                }
+
+              
+                var salaryList = await _unitOfWork.Salarys.GetAllAsync(s =>
+                    employees.Any(e => e.EmpId == s.EmpId) &&
+                    s.DtMonth == month &&
+                    s.DtYear == year);
+
+                if (salaryList == null || !salaryList.Any())
+                {
+                    return NotFound("No salaries found for the given filters.");
+                }
+
+                return Ok(salaryList);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
 
         // POST: api/Employee
         [HttpPost]
