@@ -33,7 +33,6 @@ namespace Hr_task.Controllers
             var emp = await _unitOfWork.Employees.GetAsync(x => x.EmpId == atn.EmpId);
             if (emp == null) return BadRequest("Invalid employee ID");
 
-            // Set ID if not provided
             if (atn.Id == Guid.Empty)
             {
                 atn.Id = Guid.NewGuid();

@@ -12,7 +12,7 @@ namespace HR_Management.Model.App_Model
         [Required, StringLength(50)]
         public string DesigName { get; set; }
 
-        // Navigation property
+    
         public virtual ICollection<Employee> Employees { get; set; }
     }
 

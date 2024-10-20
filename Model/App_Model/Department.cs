@@ -12,7 +12,6 @@ namespace HR_Management.Model.App_Model
         [Required, StringLength(50)]
         public string DeptName { get; set; }
 
-        // Navigation property
         public virtual ICollection<Employee> Employees { get; set; }
     }
 
