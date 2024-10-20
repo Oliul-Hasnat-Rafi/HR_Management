@@ -1,7 +1,7 @@
 ﻿using API_Task.Data.Interface;
 using HR_Management.Model.App_Model;
+using HR_Management.Model.DTO;
 using Hr_task.Model.DTO;
-using Hr_task.Model.DTO.Hr_task.Model.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hr_task.Controllers
@@ -17,7 +17,7 @@ namespace Hr_task.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        
+
         [HttpGet]
         public async Task<ActionResult> GetEmployees()
         {
@@ -39,7 +39,7 @@ namespace Hr_task.Controllers
         {
             try
             {
-                var employees = await _unitOfWork.Employees.GetAllAsync(x=> x.EmpId ==_Empid);
+                var employees = await _unitOfWork.Employees.GetAllAsync(x => x.EmpId == _Empid);
 
                 if (employees == null)
                 {
@@ -90,7 +90,7 @@ namespace Hr_task.Controllers
         {
             try
             {
-                
+
                 if (departmentId == Guid.Empty) return BadRequest("Invalid department ID.");
                 if (month < 1 || month > 12) return BadRequest("Invalid month.");
                 if (year < 1900 || year > DateTime.Now.Year) return BadRequest("Invalid year.");
@@ -102,7 +102,7 @@ namespace Hr_task.Controllers
                     return NotFound("No employees found for the given department.");
                 }
 
-              
+
                 var salaryList = await _unitOfWork.Salarys.GetAllAsync(s =>
                     employees.Any(e => e.EmpId == s.EmpId) &&
                     s.DtMonth == month &&
@@ -120,43 +120,30 @@ namespace Hr_task.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
-
-        // POST: api/Employee
-        [HttpPost]
+        [HttpPost("Create")]
         public async Task<ActionResult> CreateEmployee(EmployeeDTO employeeDTO)
         {
             try
             {
-                // Validate company
+           
                 var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == employeeDTO.ComId);
                 if (company == null)
                     return BadRequest("Invalid company ID.");
 
-                // Validate unique employee code
                 var existingEmployee = await _unitOfWork.Employees.GetAsync(e =>
-                    e.EmpCode == employeeDTO.EmpCode && e.ComId == employeeDTO.ComId);
+                    e.EmpCode == employeeDTO.EmpCode);
                 if (existingEmployee != null)
                     return BadRequest("Employee code must be unique within the company.");
 
-                // Validate department
-                var department = await _unitOfWork.Departments.GetAsync(d =>
-                    d.DeptId == employeeDTO.DeptId && d.ComId == employeeDTO.ComId);
-                if (department == null)
-                    return BadRequest("Invalid department ID for the specified company.");
-// Validate shift
-                var shiftValidate = await _unitOfWork.Shifts.GetAsync(d =>
-                    d.ShiftId == employeeDTO.ShiftId && d.ComId == employeeDTO.ComId);
-                if (department == null)
-                    return BadRequest("Invalid department ID for the specified company.");
-                    
-                // Validate designation
-                var designation = await _unitOfWork.Designations.GetAsync(d =>
-                    d.DesigId == employeeDTO.DesigId && d.ComId == employeeDTO.ComId);
-                if (designation == null)
-                    return BadRequest("Invalid designation ID for the specified company.");
-
-                // Calculate salary components based on company percentages
                 decimal grossSalary = employeeDTO.GrossSalary;
+                if (grossSalary <= 0)
+                    return BadRequest("Gross salary must be a positive value.");
+
+               
+                if (company.Basic + company.Hrent + company.Medical > 100m)
+                    return BadRequest("Invalid company salary percentages. Total cannot exceed 100%.");
+
+              
                 var employee = new Employee
                 {
                     EmpId = Guid.NewGuid(),
@@ -164,31 +151,148 @@ namespace Hr_task.Controllers
                     EmpCode = employeeDTO.EmpCode,
                     EmpName = employeeDTO.EmpName,
                     ShiftId = employeeDTO.ShiftId,
-                    
                     DeptId = employeeDTO.DeptId,
-                                        DeptName = department.DeptName,
-                                       desigName=designation.DesigName,
-shiftName= shiftValidate.ShiftName,
-
                     DesigId = employeeDTO.DesigId,
-
                     Gender = employeeDTO.Gender,
                     Gross = grossSalary,
-                    Basic = grossSalary * (company.Basic / 100),
-                    HRent = grossSalary * (company.Hrent / 100),
-                    Medical = grossSalary * (company.Medical / 100),
-                    Others = grossSalary * ((100 - company.Basic - company.Hrent - company.Medical) / 100),
+                    Basic = grossSalary * (company.Basic / 100m),
+                    HRent = grossSalary * (company.Hrent / 100m),
+                    Medical = grossSalary * (company.Medical / 100m),
+                    Others = grossSalary * ((100m - company.Basic - company.Hrent - company.Medical) / 100m),
                     DtJoin = employeeDTO.JoinDate
                 };
 
                 await _unitOfWork.Employees.CreateAsync(employee);
                 await _unitOfWork.SaveAsync();
 
-                return CreatedAtAction(nameof(GetEmployees), new { id = employee.EmpId }, employee);
+              
+
+                return Ok("Employee created successfully");
+            }
+            catch (Exception ex)
+            {
+                
+
+                return StatusCode(500, "An error occurred while processing your request. Please try again later.");
+            }
+        }
+
+        [HttpDelete("delectEmployee{id}")]
+        public async Task<ActionResult> DeleteEmployee(Guid id)
+        {
+            try
+            {
+                var employee = await _unitOfWork.Employees.GetAsync(e => e.EmpId == id);
+                if (employee == null)
+                    return NotFound("Employee not found.");
+
+                 _unitOfWork.Employees.DeleteAsync(employee);
+                await _unitOfWork.SaveAsync();
+
+                return NoContent();
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateEmployee(Guid id, EmployeeDTO employeeDTO)
+        {
+            try
+            {
+                var existingEmployee = await _unitOfWork.Employees.GetAsync(e => e.EmpId == id);
+                if (existingEmployee == null)
+                    return NotFound("Employee not found.");
+
+                var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == employeeDTO.ComId);
+                if (company == null)
+                    return BadRequest("Invalid company ID.");
+
+                var duplicateEmployee = await _unitOfWork.Employees.GetAsync(e =>
+                    e.EmpCode == employeeDTO.EmpCode && e.EmpId != id);
+                if (duplicateEmployee != null)
+                    return BadRequest("Employee code must be unique within the company.");
+
+              
+                decimal grossSalary = employeeDTO.GrossSalary;
+                if (grossSalary <= 0)
+                    return BadRequest("Gross salary must be a positive value.");
+
+                if (company.Basic + company.Hrent + company.Medical > 100m)
+                    return BadRequest("Invalid company salary percentages. Total cannot exceed 100%.");
+
+         
+                existingEmployee.ComId = employeeDTO.ComId;
+                existingEmployee.EmpCode = employeeDTO.EmpCode;
+                existingEmployee.EmpName = employeeDTO.EmpName;
+                existingEmployee.ShiftId = employeeDTO.ShiftId;
+                existingEmployee.DeptId = employeeDTO.DeptId;
+                existingEmployee.DesigId = employeeDTO.DesigId;
+                existingEmployee.Gender = employeeDTO.Gender;
+                existingEmployee.Gross = grossSalary;
+                existingEmployee.Basic = grossSalary * (company.Basic / 100m);
+                existingEmployee.HRent = grossSalary * (company.Hrent / 100m);
+                existingEmployee.Medical = grossSalary * (company.Medical / 100m);
+                existingEmployee.Others = grossSalary * ((100m - company.Basic - company.Hrent - company.Medical) / 100m);
+                existingEmployee.DtJoin = employeeDTO.JoinDate;
+
+                await _unitOfWork.Employees.UpdateAsync(existingEmployee);
+                await _unitOfWork.SaveAsync();
+
+                return Ok("Employee updated successfully");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+
+
+
+        [HttpGet("DeptList")]
+        public async Task<ActionResult> GetDept()
+        {
+            try
+            {
+                var employees = await _unitOfWork.Departments.GetAllAsync();
+                return Ok(employees); 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+
+            }
+        }
+        [HttpGet("DesigList")]
+        public async Task<ActionResult> GetDesignations()
+        {
+            try
+            {
+                var employees = await _unitOfWork.Designations.GetAllAsync();
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+
+            }
+        }
+
+        [HttpGet("ShiftList")]
+        public async Task<ActionResult> GetShift()
+        {
+            try
+            {
+                var employees = await _unitOfWork.Shifts.GetAllAsync();
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+
             }
         }
     }

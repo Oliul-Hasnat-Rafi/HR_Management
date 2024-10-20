@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "B:\\source\\Hr_task\\HR_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\attendancesummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,6 +23,26 @@
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\source\\Hr_task\\HR_Management\\Migrations\\20241020103150_dv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241020103150_dv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\data\\interface\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:data\\interface\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\shift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\shift.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,36 +51,36 @@
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\salary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\designation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\designation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\app_model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\app_model\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\hr_task.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:hr_task.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\migrations\\20241019163310_kk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:migrations\\20241019163310_kk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\migrations\\20241016154313_ffd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:migrations\\20241016154313_ffd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162835_xhb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241019162835_xhb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\migrations\\20241017112555_fso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:migrations\\20241017112555_fso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162552_kjk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241019162552_kjk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\migrations\\20241017112220_fsf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:migrations\\20241017112220_fsf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\model\\dto\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:model\\dto\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019064715_v.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241019064715_v.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|b:\\source\\hr_task\\hr_management\\migrations\\20241020040352_sa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F371FE2-8398-45B8-94B4-4B6CB4044CE0}|Hr_task.csproj|solutionrelative:migrations\\20241020040352_sa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,53 +94,89 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20241017112555_fso.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241017112555_fso.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241017112555_fso.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241017112555_fso.cs",
-              "RelativeToolTip": "Migrations\\20241017112555_fso.cs",
+              "DocumentIndex": 5,
+              "Title": "20241020103150_dv.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241020103150_dv.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241020103150_dv.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241020103150_dv.cs",
+              "RelativeToolTip": "Migrations\\20241020103150_dv.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:25:55.449Z"
+              "WhenOpened": "2024-10-20T10:31:51.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Data\\Interface\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Data\\Interface\\IUnitOfWork.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Data\\Interface\\IUnitOfWork.cs",
+              "RelativeToolTip": "Data\\Interface\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T10:31:13.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20241020040352_sa.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241020040352_sa.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241020040352_sa.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241020040352_sa.cs",
+              "RelativeToolTip": "Migrations\\20241020040352_sa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:03:52.622Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "20241017112220_fsf.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241017112220_fsf.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241017112220_fsf.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241017112220_fsf.cs",
-              "RelativeToolTip": "Migrations\\20241017112220_fsf.cs",
+              "Title": "20241019163310_kk.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019163310_kk.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241019163310_kk.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019163310_kk.cs",
+              "RelativeToolTip": "Migrations\\20241019163310_kk.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:22:20.802Z"
+              "WhenOpened": "2024-10-19T16:33:12.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AttendanceController.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\AttendanceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AttendanceController.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\AttendanceController.cs",
-              "RelativeToolTip": "Controllers\\AttendanceController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAwCIAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "20241019162835_xhb.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162835_xhb.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241019162835_xhb.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162835_xhb.cs",
+              "RelativeToolTip": "Migrations\\20241019162835_xhb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T10:25:26.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T16:28:36.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAYwFYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "20241019162552_kjk.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162552_kjk.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241019162552_kjk.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019162552_kjk.cs",
+              "RelativeToolTip": "Migrations\\20241019162552_kjk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T00:35:11.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T16:25:52.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EmployeeDTO.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\DTO\\EmployeeDTO.cs",
+              "RelativeDocumentMoniker": "Model\\DTO\\EmployeeDTO.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\DTO\\EmployeeDTO.cs",
+              "RelativeToolTip": "Model\\DTO\\EmployeeDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T15:47:40.317Z"
             },
             {
               "$type": "Document",
@@ -130,9 +186,10 @@
               "RelativeDocumentMoniker": "Model\\App_Model\\AttendanceSummary.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\AttendanceSummary.cs",
               "RelativeToolTip": "Model\\App_Model\\AttendanceSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA+wCAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T00:32:48.69Z"
+              "WhenOpened": "2024-10-19T15:22:43.308Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -142,116 +199,145 @@
               "RelativeDocumentMoniker": "Model\\App_Model\\Attendance.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Attendance.cs",
               "RelativeToolTip": "Model\\App_Model\\Attendance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T00:32:37.964Z"
+              "WhenOpened": "2024-10-19T15:22:09.112Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Hr_task.csproj",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
-              "RelativeDocumentMoniker": "Hr_task.csproj",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Hr_task.csproj",
-              "RelativeToolTip": "Hr_task.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-17T00:30:53.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "20241016154313_ffd.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241016154313_ffd.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241016154313_ffd.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241016154313_ffd.cs",
-              "RelativeToolTip": "Migrations\\20241016154313_ffd.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:43:14.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Department.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Department.cs",
-              "RelativeDocumentMoniker": "Model\\App_Model\\Department.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Department.cs",
-              "RelativeToolTip": "Model\\App_Model\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:22:41.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Shift.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Shift.cs",
-              "RelativeDocumentMoniker": "Model\\App_Model\\Shift.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Shift.cs",
-              "RelativeToolTip": "Model\\App_Model\\Shift.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:22:24.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Salary.cs",
               "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Salary.cs",
               "RelativeDocumentMoniker": "Model\\App_Model\\Salary.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Salary.cs",
               "RelativeToolTip": "Model\\App_Model\\Salary.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAswCoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:22:22.863Z"
+              "WhenOpened": "2024-10-19T15:11:06.068Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
+              "Title": "20241019064715_v.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019064715_v.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241019064715_v.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Migrations\\20241019064715_v.cs",
+              "RelativeToolTip": "Migrations\\20241019064715_v.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T06:47:15.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CompanyController.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Controllers\\CompanyController.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAowHkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T06:25:07.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AttendanceController.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\AttendanceController.cs*",
+              "RelativeToolTip": "Controllers\\AttendanceController.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T03:26:09.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDBContext.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Data\\ApplicationDBContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDBContext.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Data\\ApplicationDBContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDBContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswDIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T06:23:56.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Shift.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Shift.cs",
+              "RelativeDocumentMoniker": "Model\\App_Model\\Shift.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Shift.cs",
+              "RelativeToolTip": "Model\\App_Model\\Shift.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T06:22:01.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Designation.cs",
               "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Designation.cs",
               "RelativeDocumentMoniker": "Model\\App_Model\\Designation.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Designation.cs",
               "RelativeToolTip": "Model\\App_Model\\Designation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:21:53.288Z"
+              "WhenOpened": "2024-10-19T06:21:48.672Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CompanyController.cs",
-              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\CompanyController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CompanyController.cs",
-              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\CompanyController.cs*",
-              "RelativeToolTip": "Controllers\\CompanyController.cs*",
-              "ViewState": "AgIAACQAAAAAAAAAAMAwwCcAAABIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Department.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Department.cs",
+              "RelativeDocumentMoniker": "Model\\App_Model\\Department.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Department.cs",
+              "RelativeToolTip": "Model\\App_Model\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T15:10:52Z",
+              "WhenOpened": "2024-10-19T04:42:06.61Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
+              "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAP0AAAAAAAAAAADwv+EAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-18T16:56:39.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Employee.cs",
               "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Employee.cs",
               "RelativeDocumentMoniker": "Model\\App_Model\\Employee.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Employee.cs",
               "RelativeToolTip": "Model\\App_Model\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T15:10:04.379Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Company.cs",
               "DocumentMoniker": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Company.cs",
               "RelativeDocumentMoniker": "Model\\App_Model\\Company.cs",
               "ToolTip": "B:\\source\\Hr_task\\HR_Management\\Model\\App_Model\\Company.cs",
               "RelativeToolTip": "Model\\App_Model\\Company.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T15:09:30.096Z"
             }

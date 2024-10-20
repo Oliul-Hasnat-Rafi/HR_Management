@@ -37,31 +37,50 @@ namespace Hr_task.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetCompany(Guid id, Guid? depid)
+        public async Task<ActionResult> GetCompany(Guid id, Guid? deptId)
         {
-
             var company = await _unitOfWork.Companies.GetAsync(x => x.ComId == id);
-
-
-
-
             if (company == null)
             {
                 return NotFound();
             }
 
+            var employees = await _unitOfWork.Employees.GetAllAsync(e => e.ComId == id && (!deptId.HasValue || e.DeptId == deptId.Value));
+            var departments = await _unitOfWork.Departments.GetAllAsync();
+            var designations = await _unitOfWork.Designations.GetAllAsync();
+            var shifts = await _unitOfWork.Shifts.GetAllAsync();
 
-            var employees = await _unitOfWork.Employees.GetAllAsync(e => e.ComId == id);
-
-
+            var employeesWithDetails = employees.Select(e => new
+            {
+                e.EmpId,
+                e.ComId,
+                e.EmpCode,
+                e.EmpName,
+                e.ShiftId,
+                e.DeptId,
+                e.DesigId,
+                e.Gender,
+                e.Gross,
+                e.Basic,
+                e.HRent,
+                e.Medical,
+                e.Others,
+                e.DtJoin,
+                e.Company,
+                e.Attendances,
+                e.AttendanceSummaries,
+                e.Salaries,
+                DeptName = departments.FirstOrDefault(d => d.DeptId == e.DeptId)?.DeptName,
+                DesignationName = designations.FirstOrDefault(d => d.DesigId == e.DesigId)?.DesigName,
+                ShiftName = shifts.FirstOrDefault(s => s.ShiftId == e.ShiftId)?.ShiftName
+            });
 
             var result = new
             {
                 CompanyInfo = company,
-                EmpInfo = employees
+                EmpInfo = employeesWithDetails
             };
 
-            
             return Ok(result);
         }
 
@@ -100,7 +119,7 @@ namespace Hr_task.Controllers
             }
         }
 
-        // PUT: api/Company/5
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCompany(Guid id, CompanyDTO company)
         {

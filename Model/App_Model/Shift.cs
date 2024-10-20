@@ -8,19 +8,30 @@ namespace HR_Management.Model.App_Model
     {
         [Key]
         public Guid ShiftId { get; set; }
-        public Guid ComId { get; set; }
-        [Required]
-        public string ShiftName { get; set; }
-        [Required]
-        public DateTime empIn { get; set; }
-        [Required]
-        public DateTime empOut { get; set; }
-        [Required]
-        public DateTime Late { get; set; }
 
-        [ForeignKey("ComId")]
-        public Company Company { get; set; }
-        public ICollection<Employee> Employees { get; set; }
+        [Required, StringLength(50)]
+        public string ShiftName { get; set; }
+
+        [Required]
+        public DateTime ShiftStart { get; set; }
+
+        [Required]
+        public DateTime ShiftEnd { get; set; }
+
+        [Required]
+        public DateTime LateThreshold { get; set; }
+
+        public Guid? ComId { get; set; }
+public virtual ICollection<Employee> Employees { get; set; }
+
     }
 
 }
+
+
+
+
+
+
+
+ 

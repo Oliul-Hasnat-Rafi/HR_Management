@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hr_task.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241016145828_ffdfg")]
-    partial class ffdfg
+    [Migration("20241019163310_kk")]
+    partial class kk
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,22 +33,20 @@ namespace Hr_task.Migrations
 
                     b.Property<string>("AttStatus")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<Guid>("ComId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("DtDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<Guid>("EmpId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("InTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("InTime")
+                        .HasColumnType("datetime2");
 
-                    b.Property<TimeSpan>("OutTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("OutTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -106,7 +104,8 @@ namespace Hr_task.Migrations
 
                     b.Property<string>("ComName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Hrent")
                         .HasColumnType("decimal(18,2)");
@@ -128,16 +127,12 @@ namespace Hr_task.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ComId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("DeptName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("DeptId");
-
-                    b.HasIndex("ComId");
 
                     b.ToTable("Departments");
                 });
@@ -148,16 +143,12 @@ namespace Hr_task.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ComId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("DesigName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("DesigId");
-
-                    b.HasIndex("ComId");
 
                     b.ToTable("Designations");
                 });
@@ -185,15 +176,18 @@ namespace Hr_task.Migrations
 
                     b.Property<string>("EmpCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("EmpName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Gender")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<decimal>("Gross")
                         .HasColumnType("decimal(18,2)");
@@ -283,18 +277,19 @@ namespace Hr_task.Migrations
                     b.Property<Guid>("ComId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("In")
+                    b.Property<TimeSpan>("LateThreshold")
                         .HasColumnType("time");
 
-                    b.Property<TimeSpan>("Late")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("Out")
+                    b.Property<TimeSpan>("ShiftEnd")
                         .HasColumnType("time");
 
                     b.Property<string>("ShiftName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<TimeSpan>("ShiftStart")
+                        .HasColumnType("time");
 
                     b.HasKey("ShiftId");
 
@@ -306,15 +301,15 @@ namespace Hr_task.Migrations
             modelBuilder.Entity("HR_Management.Model.App_Model.Attendance", b =>
                 {
                     b.HasOne("HR_Management.Model.App_Model.Company", "Company")
-                        .WithMany()
+                        .WithMany("Attendances")
                         .HasForeignKey("ComId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("HR_Management.Model.App_Model.Employee", "Employee")
                         .WithMany("Attendances")
                         .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
@@ -325,42 +320,20 @@ namespace Hr_task.Migrations
             modelBuilder.Entity("HR_Management.Model.App_Model.AttendanceSummary", b =>
                 {
                     b.HasOne("HR_Management.Model.App_Model.Company", "Company")
-                        .WithMany()
+                        .WithMany("AttendanceSummaries")
                         .HasForeignKey("ComId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("HR_Management.Model.App_Model.Employee", "Employee")
                         .WithMany("AttendanceSummaries")
                         .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
 
                     b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("HR_Management.Model.App_Model.Department", b =>
-                {
-                    b.HasOne("HR_Management.Model.App_Model.Company", "Company")
-                        .WithMany("Departments")
-                        .HasForeignKey("ComId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-                });
-
-            modelBuilder.Entity("HR_Management.Model.App_Model.Designation", b =>
-                {
-                    b.HasOne("HR_Management.Model.App_Model.Company", "Company")
-                        .WithMany("Designations")
-                        .HasForeignKey("ComId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("HR_Management.Model.App_Model.Employee", b =>
@@ -401,15 +374,15 @@ namespace Hr_task.Migrations
             modelBuilder.Entity("HR_Management.Model.App_Model.Salary", b =>
                 {
                     b.HasOne("HR_Management.Model.App_Model.Company", "Company")
-                        .WithMany()
+                        .WithMany("Salaries")
                         .HasForeignKey("ComId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("HR_Management.Model.App_Model.Employee", "Employee")
                         .WithMany("Salaries")
                         .HasForeignKey("EmpId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Company");
@@ -430,11 +403,13 @@ namespace Hr_task.Migrations
 
             modelBuilder.Entity("HR_Management.Model.App_Model.Company", b =>
                 {
-                    b.Navigation("Departments");
+                    b.Navigation("AttendanceSummaries");
 
-                    b.Navigation("Designations");
+                    b.Navigation("Attendances");
 
                     b.Navigation("Employees");
+
+                    b.Navigation("Salaries");
 
                     b.Navigation("Shifts");
                 });

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Hr_task.Migrations
 {
     /// <inheritdoc />
-    public partial class ffdfg : Migration
+    public partial class kk : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace Hr_task.Migrations
                 columns: table => new
                 {
                     ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ComName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ComName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Basic = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Hrent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Medical = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -32,18 +32,11 @@ namespace Hr_task.Migrations
                 columns: table => new
                 {
                     DeptId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeptName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DeptName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Departments", x => x.DeptId);
-                    table.ForeignKey(
-                        name: "FK_Departments_Companies_ComId",
-                        column: x => x.ComId,
-                        principalTable: "Companies",
-                        principalColumn: "ComId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -51,18 +44,11 @@ namespace Hr_task.Migrations
                 columns: table => new
                 {
                     DesigId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DesigName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DesigName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Designations", x => x.DesigId);
-                    table.ForeignKey(
-                        name: "FK_Designations_Companies_ComId",
-                        column: x => x.ComId,
-                        principalTable: "Companies",
-                        principalColumn: "ComId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,11 +56,11 @@ namespace Hr_task.Migrations
                 columns: table => new
                 {
                     ShiftId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ShiftName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    In = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Out = table.Column<TimeSpan>(type: "time", nullable: false),
-                    Late = table.Column<TimeSpan>(type: "time", nullable: false)
+                    ShiftName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ShiftStart = table.Column<TimeSpan>(type: "time", nullable: false),
+                    ShiftEnd = table.Column<TimeSpan>(type: "time", nullable: false),
+                    LateThreshold = table.Column<TimeSpan>(type: "time", nullable: false),
+                    ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,12 +79,12 @@ namespace Hr_task.Migrations
                 {
                     EmpId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EmpCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmpName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EmpCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    EmpName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ShiftId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DeptId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DesigId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Gross = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Basic = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     HRent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -142,10 +128,9 @@ namespace Hr_task.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ComId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     EmpId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DtDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AttStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    InTime = table.Column<TimeSpan>(type: "time", nullable: false),
-                    OutTime = table.Column<TimeSpan>(type: "time", nullable: false)
+                    AttStatus = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    InTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OutTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -155,13 +140,13 @@ namespace Hr_task.Migrations
                         column: x => x.ComId,
                         principalTable: "Companies",
                         principalColumn: "ComId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Attendances_Employees_EmpId",
                         column: x => x.EmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -185,13 +170,13 @@ namespace Hr_task.Migrations
                         column: x => x.ComId,
                         principalTable: "Companies",
                         principalColumn: "ComId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AttendanceSummaries_Employees_EmpId",
                         column: x => x.EmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -220,13 +205,13 @@ namespace Hr_task.Migrations
                         column: x => x.ComId,
                         principalTable: "Companies",
                         principalColumn: "ComId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Salaries_Employees_EmpId",
                         column: x => x.EmpId,
                         principalTable: "Employees",
                         principalColumn: "EmpId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -248,16 +233,6 @@ namespace Hr_task.Migrations
                 name: "IX_AttendanceSummaries_EmpId",
                 table: "AttendanceSummaries",
                 column: "EmpId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Departments_ComId",
-                table: "Departments",
-                column: "ComId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Designations_ComId",
-                table: "Designations",
-                column: "ComId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_ComId",
